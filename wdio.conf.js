@@ -1,3 +1,7 @@
+const test1 = "./test/specs/locked_user.test.js";
+const test2 = "./test/specs/standard_user.test.js";
+const test3 = "./test/specs/performance_user.test.js";
+    
 exports.config = {
     //
     // ====================
@@ -20,9 +24,30 @@ exports.config = {
     // The path of the spec files will be resolved relative from the directory of
     // of the config file unless it's absolute.
     //
-    specs: [
-        './test/specs/**/*.js'
-    ],
+    
+    specs: [], // Empty to enforce suite-based execution
+    maxInstances: 1, // Forces sequential execution
+    
+    // Define clear test suites
+    suites: {
+        test1: [test1],
+        test2: [test2],
+        test3: [test3],
+        test: [test1, test2, test3] // Complete test run
+    },
+    //specs: [test1,test2,test3],
+  //suites: {
+    //productToCart:[[test1,test2],test3],
+    //test1: ['./test/specs/locked_user.test.js'],//login
+    //test2: ['./test/specs/standard_user.test.js'],//standard
+    //test3: ['./test/specs/performance_user.test.js'],//performance
+    //test: [
+        //'./test/specs/locked_user.test.js',
+        //'./test/specs/standard_user.test.js',
+        //'./test/specs/performance_user.test.js'
+    
+      //], // Runs all tests
+  //},
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -49,8 +74,16 @@ exports.config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        browserName: 'chrome'
+    //capabilities: [{
+        //browserName: 'chrome'
+   // }],
+   capabilities: [{
+        browserName: 'chrome',
+        'goog:chromeOptions': {
+            // Add options if needed
+            // args: ['--headless', '--disable-gpu']
+        },
+        acceptInsecureCerts: true
     }],
 
     //
@@ -84,7 +117,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    // baseUrl: 'http://localhost:8080',
+    baseUrl: 'https://www.saucedemo.com/',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -123,7 +156,16 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
+    //reporters: ['spec'],
+   reporters: [
+    ['allure', 
+    {
+    outputDir: 'allure-results',
+    disableWebdriverStepsReporting: false,
+    disableWebdriverScreenshotsReporting: true,
+    },
+],
+],
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -197,8 +239,10 @@ exports.config = {
      * Hook that gets executed before the suite starts
      * @param {object} suite suite details
      */
-    // beforeSuite: function (suite) {
-    // },
+    beforeSuite: async function (suite) {
+        await browser.url(this.baseUrl);
+        await browser.maximizeWindow();
+      },
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
@@ -226,8 +270,12 @@ exports.config = {
      * @param {boolean} result.passed    true if test has passed, otherwise false
      * @param {object}  result.retries   information about spec related retries, e.g. `{ attempts: 0, limit: 0 }`
      */
-    // afterTest: function(test, context, { error, result, duration, passed, retries }) {
-    // },
+    //afterTest: async function(test, context, { error, result, duration, passed, retries }) {
+       // if(error){
+            //const screenshot = await browser.takeScreenshot();
+           // allure.addAttachment('Screenshot',Buffer.from(screenshot,'base64'),"failure/png");
+        //}
+    //},
 
 
     /**
