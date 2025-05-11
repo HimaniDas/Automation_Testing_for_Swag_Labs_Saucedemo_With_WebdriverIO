@@ -1,3 +1,4 @@
+
 class CheckoutPage {  
     get firstName(){ 
         return $('#first-name'); 
@@ -19,6 +20,9 @@ class CheckoutPage {
     }  
     get finishBtn(){ 
         return $('#finish'); 
+    } 
+    get successMessage(){ 
+        return $('[data-test="complete-header"]'); 
     } 
     async fillInfo(firstName, lastName, zip) {  
       await this.firstName.setValue(firstName);  
