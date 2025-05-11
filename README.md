@@ -8,7 +8,7 @@ This repository contains an end-to-end automation framework for testing [Swag La
 
 ✅ Modular & reusable test structure
 
-✅ Cross-browser testing support (Chrome, Firefox)
+✅ Cross-browser testing support (Chrome)
 
 ✅ Allure Reports for detailed test analysis
 
