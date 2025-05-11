@@ -61,7 +61,7 @@ async menu() {
     await this.resetBtn.click(); 
   }
   async logout() {  
-    await this.logoutBtn.click(); 
+    await this.logoutBtn.click(); //logout
   }
   
 }  
