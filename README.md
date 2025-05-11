@@ -103,8 +103,14 @@ npm init wdio@latest
 ```
 ### 📌 Configuration Options (select during the wizard)
 
+✅ What type of testing would you like to do?
+E2E Testing
+
 ✅ Where is your automation backend located?
 On my local machine
+
+✅ Which environment you like to do automation?
+web - web applications in the browser
 
 ✅ Which framework do you want to use?
 Mocha (https://mochajs.org/)
@@ -196,8 +202,6 @@ npm run getReport(for overall test)
 📌 Screenshots on failure (If there any fail)
 
 📌 Execution history
-
-
 
 
 
