@@ -81,9 +81,9 @@ Swag_Labs_Saucedemo_With_WebdriverIO/
 - Order summary confirmation
 - Final order success message
 
-# 🚀 Installation & Setup
+## 🚀 Installation & Setup
 
-> Prerequisite: Install **Node.js v16+** and **npm**
+Prerequisite: Install **Node.js v16+** and **npm**
 
 ### 1. Clone the repository
 
