@@ -182,7 +182,7 @@ afterTest: async function(test, context, { error, result, duration, passed, retr
 ## 🚦 Run Tests
 
 ```bash
-npm run test(for complete test)
+npm run test(for overall test)
 npm run test1(for locked out user)
 npm run test2(for standard user)
 npm run test3(for performance user)
