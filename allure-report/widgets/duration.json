@@ -1,1 +1,1 @@
-[]
+[{"uid":"689fd847400107d6","name":"should complete Z-A sorted purchase","time":{"start":1746984667982,"stop":1746984719484,"duration":51502},"status":"passed","severity":"normal"},{"uid":"941612059d6c5872","name":"should show error for locked_out_user","time":{"start":1746984667988,"stop":1746984689137,"duration":21149},"status":"passed","severity":"normal"},{"uid":"b5b5bbcc5f9fd4a3","name":"should complete 3-item purchase","time":{"start":1746984667984,"stop":1746984699998,"duration":32014},"status":"passed","severity":"normal"}]
