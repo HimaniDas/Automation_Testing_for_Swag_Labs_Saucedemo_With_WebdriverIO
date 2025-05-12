@@ -16,7 +16,6 @@ describe('Standard User Test Suite', () => {
     await expect(CheckoutPage.totalPrice).toHaveText('Total: $60.45');
     await CheckoutPage.finishCheckout();
   });
-
   it('should verify successful order message', async () => {
     await expect(CheckoutPage.successMessage).toHaveText('Thank you for your order!');
     await ProductsPage.backHome();
