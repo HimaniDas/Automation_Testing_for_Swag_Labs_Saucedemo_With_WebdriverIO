@@ -17,7 +17,6 @@ describe('Performance User Test Suite', () =>{
     await expect(CheckoutPage.totalPrice).toHaveText('Total: $17.27');  
     await CheckoutPage.finishCheckout();
 });
-
   it('should verify successful order message', async () => {
     await expect(CheckoutPage.successMessage).toHaveText('Thank you for your order!');
     await ProductsPage.backHome();
