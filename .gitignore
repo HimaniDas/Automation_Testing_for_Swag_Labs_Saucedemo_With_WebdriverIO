@@ -1,3 +1,7 @@
 node_modules
 package-lock.json
 package.json
+allure-report
+allure-report-test2
+allure-report-test3
+allure-results
