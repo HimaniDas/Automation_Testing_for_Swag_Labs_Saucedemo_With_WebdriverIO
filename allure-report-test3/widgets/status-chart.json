@@ -1,1 +1,1 @@
-[{"uid":"5dc301487ffd0892","name":"should complete Z-A sorted purchase","time":{"start":1746985148512,"stop":1746985182262,"duration":33750},"status":"passed","severity":"normal"}]
+[{"uid":"2dc8897a83c97a33","name":"should complete Z-A sorted purchase","time":{"start":1747059632566,"stop":1747059660177,"duration":27611},"status":"passed","severity":"normal"},{"uid":"5e8307d8c85c5c6b","name":"should verify successful order message","time":{"start":1747059660184,"stop":1747059666865,"duration":6681},"status":"passed","severity":"normal"}]
