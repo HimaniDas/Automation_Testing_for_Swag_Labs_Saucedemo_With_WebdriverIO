@@ -24,6 +24,7 @@ class CheckoutPage {
     get successMessage(){ 
         return $('[data-test="complete-header"]'); 
     } 
+    
     async fillInfo(firstName, lastName, zip) {  
       await this.firstName.setValue(firstName);  
       await this.lastName.setValue(lastName);  
