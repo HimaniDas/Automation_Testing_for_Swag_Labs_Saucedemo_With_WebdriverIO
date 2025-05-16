@@ -1,3 +1,3 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","7020","should verify successful order message","","Mon May 12 22:21:38 BDT 2025","passed","Mon May 12 22:21:45 BDT 2025","","Performance User Test Suite","",""
-"","32360","should complete Z-A sorted purchase","","Mon May 12 22:21:05 BDT 2025","passed","Mon May 12 22:21:38 BDT 2025","","Performance User Test Suite","",""
+"","5580","should verify successful order message","","Thu May 15 19:29:12 BDT 2025","passed","Thu May 15 19:29:18 BDT 2025","","Performance User Test Suite","",""
+"","27539","should complete Z-A sorted purchase","","Thu May 15 19:28:45 BDT 2025","passed","Thu May 15 19:29:12 BDT 2025","","Performance User Test Suite","",""
