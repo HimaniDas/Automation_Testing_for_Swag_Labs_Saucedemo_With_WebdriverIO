@@ -1,3 +1,4 @@
+const allure = require('allure-commandline');
 const test1 = "./test/specs/locked_user.test.js";
 const test2 = "./test/specs/standard_user.test.js";
 const test3 = "./test/specs/performance_user.test.js";
