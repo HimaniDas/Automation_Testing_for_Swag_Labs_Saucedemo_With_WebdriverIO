@@ -1,6 +1,7 @@
 # 🧪 Swag Labs Test Automation Suite with WebdriverIO
 
-This repository contains an end-to-end automation framework for testing [Swag Labs](https://www.saucedemo.com/) using WebdriverIO, Mocha, JavaScript, and Allure Reports. It follows the Page Object Model (POM) design pattern for better maintainability.
+This repository contains an automation framework for testing [Swag Labs](https://www.saucedemo.com/) using WebdriverIO, Mocha, JavaScript, and Allure Reports. It follows the Page Object Model (POM) design pattern for better maintainability.
+
 
 ## ✨ Features
 
@@ -16,6 +17,7 @@ This repository contains an end-to-end automation framework for testing [Swag La
 
 ✅ ES6+ JavaScript syntax
 
+
 ## ⚙️ Prerequisites
 
 Before running the tests, ensure:
@@ -25,6 +27,7 @@ Node.js (v14 or higher)
 npm (comes with Node.js)
 
 Google Chrome (latest version)
+
 
 ## 📂 Project Structure
 
@@ -62,28 +65,42 @@ Swag_Labs_Saucedemo_With_WebdriverIO/
             
 └── README.md
 ```
-## 🧪 Test Scenarios
 
-### ✅ Login Tests
-- Valid login with locked out user,standard user,and performance user
-- Locked out user validation
-- Error message handling
-- Standard user validation
-- Performance user validation
+## 📁 Test Case Breakdown
 
-### 🛒 Cart Tests
-- Add items to cart
-- Validate cart badge count
-- Confirm item visibility
+### ✅ Test-01 | Locked_Out_User Login
+- User: locked_out_user
+- Goal: Validate that a proper error message appears upon failed login.
+- Expected Result: Error message should explicitly state that the user is locked out.
+- Validation: Assert that the correct error message is displayed.
 
-### 💳 Checkout Tests
-- Fill personal information
-- Order summary confirmation
-- Final order success message
+### ✅ Test-02 | Standard_User_Purchase Flow
+- User: standard_user
+- Scenario Overview:
+- Login
+- Reset App State via hamburger menu
+- Add any three products to cart
+- Proceed to checkout
+- Validate product names and computed total Prices
+- Finish purchase
+- Confirm order success message
+- Reset App State again and log out
+
+### ✅ Test-03 | Performance Glitch User with Filter
+- User: performance_glitch_user
+- Scenario Overview:
+- Login and reset App State
+- Apply filter: Name (Z to A)
+- Add the first displayed item to the cart
+- Proceed through checkout
+- Validate selected product name and total amount
+- Finalize purchase and confirm success
+- Reset App State and log out
 
 ## 🚀 Installation & Setup
 
 Prerequisite: Install **Node.js v16+** and **npm**
+
 
 ### 1. Clone the repository
 
@@ -91,16 +108,19 @@ Prerequisite: Install **Node.js v16+** and **npm**
 git clone https://github.com/HimaniDas/Swag_Labs_Saucedemo_With_WebdriverIO.git
 cd Swag_Labs_Saucedemo_With_WebdriverIO
 ```
+
 ### 2. Install dependencies
 
 ```bash
 npm install
 ```
+
 ### 3. Install WebdriverIO Configuration Wizard
 
 ```bash
 npm init wdio@latest
 ```
+
 ### 📌 Configuration Options (select during the wizard)
 
 ✅ What type of testing would you like to do?
@@ -148,54 +168,18 @@ https://www.saucedemo.com/
 npm i @wdio/allure-reporter
 npm i allure-commandline
 ```
-### 5. Generate Allure Reports(use:wdio.conf.js)
+
+## 🚦 Run Tests and Allure Reports
 
 ```bash
-export const config = {
-    // ...
-    reporters: [['allure', {
-        outputDir: 'allure-results',
-        disableWebdriverStepsReporting: false,
-        disableWebdriverScreenshotsReporting: true,
-    }]],
-    // ...
-```
-### 6. Add Screenshot(If needed- use:wdio.conf.js)
-
-```
-afterTest: async function(test, context, { error, result, duration, passed, retries }) {
-    if (error) {
-        const screenshot = await browser.screenshot();
-        allure.addAttachment('Screenshot',Buffer.from(screenshot,'base64'),"failure/png");
-    }
-}
-```
-### 7. package.json (for Allure Report and tests):
-
-```
-"getReport": "allure generate --clean allure-results && allure open allure-report",
-"test1": "rmdir /s /q allure-results && wdio run wdio.conf.js --suite test1 && allure generate allure-results --clean -o allure-report-test1 && allure open allure-report-test1",
-"test2": "rmdir /s /q allure-results && wdio run wdio.conf.js --suite test2 && allure generate allure-results --clean -o allure-report-test2 && allure open allure-report-test2",
-"test3": "rmdir /s /q allure-results && wdio run wdio.conf.js --suite test3 && allure generate allure-results --clean -o allure-report-test3 && allure open allure-report-test3",
-"test": "wdio run wdio.conf.js --suite test"
-```
-## 🚦 Run Tests
-
-```bash
-npm run test(for overall test)
-npm run test1(for locked out user)
-npm run test2(for standard user)
-npm run test3(for performance user)
-```
-## 🚦 Run Allure Reports:
-
-```bash
+npm run test
 npm run test1(for locked out user)
 npm run test2(for standard user)
 npm run test3(for performance user)
 npm run getReport(for overall test)
 ```
-## 📊 Reports include:
+
+## 📊 Reports include
 
 📌 Test steps
 
