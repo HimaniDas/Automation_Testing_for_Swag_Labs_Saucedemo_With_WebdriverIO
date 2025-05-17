@@ -15,9 +15,10 @@ describe('Standard User Test Suite', () => {
         await CheckoutPage.fillInfo('Himani', 'Das', '23451');
         const itemTotalText = await CheckoutPage.itemTotal.getText();
         const itemTotal = parseFloat(itemTotalText.replace('Item total: $', ''));
-        expect(itemTotal).toBeCloseTo(parseFloat(expectedTotal), 2);
+        //expect(itemTotal).toBeCloseTo(parseFloat(expectedTotal), 2);
+        expect(itemTotal).toBeCloseTo(parseFloat(expectedTotal));
         await CheckoutPage.finishCheckout();
-         });
+    });
     it('should verify successful order message', async () => {
         //await expect(CheckoutPage.successMessage).toBeDisplayed({ timeout: 5000 });
         await expect(CheckoutPage.successMessage).toHaveText('Thank you for your order!');
