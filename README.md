@@ -1,4 +1,4 @@
-# 🧪 Swag Labs Test Automation Suite with WebdriverIO
+# 🧪 Automation Testing for Swag Labs with WebdriverIO
 
 This repository contains an automation framework for testing [Swag Labs](https://www.saucedemo.com/) using WebdriverIO, Mocha, JavaScript, and Allure Reports. It follows the Page Object Model (POM) design pattern for better maintainability.
 
