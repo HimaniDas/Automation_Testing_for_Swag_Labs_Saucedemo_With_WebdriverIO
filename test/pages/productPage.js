@@ -60,8 +60,8 @@ class ProductsPage {
             await items[i].button.click();
             total += items[i].price;
         }
-
-        return total.toFixed(2);
+         return parseFloat(total);
+        //return total.toFixed(2);
     }
     
     async sortZA() {  
